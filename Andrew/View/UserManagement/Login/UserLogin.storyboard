@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="dNh-uC-ERa">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Login Controller-->
+        <scene sceneID="s38-tp-3o7">
+            <objects>
+                <viewController id="dNh-uC-ERa" customClass="UserLoginController" customModule="Andrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="gh3-yn-eyJ">
+                        <rect key="frame" x="0.0" y="0.0" width="422" height="545"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-As-rxL">
+                                <rect key="frame" x="59" y="268" width="304" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HfT-w8-7wb"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="center" title="A bejelentkezéshez, kérlek add meg a regisztrált email-címedet, és a hozzátartozó jelszót!" id="rZh-w7-zfN">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LvG-sr-pUc" customClass="HeaderTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="103" y="310" width="217" height="43"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Bejelentkezés" id="ds4-Cj-1Wa">
+                                    <font key="font" size="36" name="HelveticaNeue-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-qE-SbB">
+                                <rect key="frame" x="151" y="363" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="UFU-VG-uuc"/>
+                                    <constraint firstAttribute="width" constant="100" id="gAB-uR-Tea"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Login" id="pjA-Ji-pUt"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xpw-f7-vF2">
+                                <rect key="frame" x="243" y="94" width="124" height="32"/>
+                                <buttonCell key="cell" type="push" title="Bejelentkezés" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7km-bb-5aP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loginButtonClicked:" target="dNh-uC-ERa" id="ZYC-Xn-a3d"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-Lv-2Tm">
+                                <rect key="frame" x="55" y="94" width="115" height="32"/>
+                                <buttonCell key="cell" type="push" title="Regisztráció" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gEa-IS-cNV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="registrationButtonClicked:" target="dNh-uC-ERa" id="HZV-SJ-IFr"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0xp-Mw-4U3" customClass="EmailTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="61" y="207" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="RSs-1e-116"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="E-mail cím" drawsBackground="YES" id="hHn-N8-gnn">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="REg-CA-b1j" id="Oeb-lo-iA7"/>
+                                </connections>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="REg-CA-b1j">
+                                <rect key="frame" x="61" y="166" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="LIN-3p-hzS"/>
+                                    <constraint firstAttribute="height" constant="21" id="ciK-f5-Yme"/>
+                                </constraints>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Jelszó" drawsBackground="YES" usesSingleLineMode="YES" id="wJD-LV-rZe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="0xp-Mw-4U3" id="kWl-7c-aFr"/>
+                                </connections>
+                            </secureTextField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DXz-FT-KoJ">
+                                <rect key="frame" x="269" y="166" width="92" height="20"/>
+                                <buttonCell key="cell" type="recessed" title="Elfelejtettem" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2e5-on-yGC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="passwordResetButtonClicked:" target="dNh-uC-ERa" id="lQ9-Os-Ssr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="DXz-FT-KoJ" firstAttribute="firstBaseline" secondItem="REg-CA-b1j" secondAttribute="firstBaseline" constant="-1" id="CSz-lO-S3L"/>
+                            <constraint firstItem="0xp-Mw-4U3" firstAttribute="centerX" secondItem="gh3-yn-eyJ" secondAttribute="centerX" id="DLP-rj-agD"/>
+                            <constraint firstItem="REg-CA-b1j" firstAttribute="top" secondItem="0xp-Mw-4U3" secondAttribute="bottom" constant="20" id="Efi-08-ttK"/>
+                            <constraint firstItem="LvG-sr-pUc" firstAttribute="top" secondItem="Ajo-qE-SbB" secondAttribute="bottom" constant="10" id="Hop-fa-sav"/>
+                            <constraint firstItem="DXz-FT-KoJ" firstAttribute="trailing" secondItem="0xp-Mw-4U3" secondAttribute="trailing" id="OFl-Bb-cGT"/>
+                            <constraint firstItem="0xp-Mw-4U3" firstAttribute="top" secondItem="kW0-As-rxL" secondAttribute="bottom" constant="40" id="Ozt-su-r1q"/>
+                            <constraint firstItem="kW0-As-rxL" firstAttribute="centerX" secondItem="LvG-sr-pUc" secondAttribute="centerX" id="SYC-in-1Tk"/>
+                            <constraint firstItem="Ajo-qE-SbB" firstAttribute="centerX" secondItem="gh3-yn-eyJ" secondAttribute="centerX" constant="-10" id="Zl4-f3-3VE"/>
+                            <constraint firstItem="REg-CA-b1j" firstAttribute="leading" secondItem="0xp-Mw-4U3" secondAttribute="leading" id="auS-lc-fgu"/>
+                            <constraint firstItem="Ajo-qE-SbB" firstAttribute="centerY" secondItem="gh3-yn-eyJ" secondAttribute="centerY" constant="-140" id="eTS-qP-Gr7"/>
+                            <constraint firstItem="kW0-As-rxL" firstAttribute="top" secondItem="LvG-sr-pUc" secondAttribute="bottom" constant="10" id="eeX-21-ZQ7"/>
+                            <constraint firstItem="Xpw-f7-vF2" firstAttribute="trailing" secondItem="REg-CA-b1j" secondAttribute="trailing" id="kQf-2H-qGd"/>
+                            <constraint firstItem="LvG-sr-pUc" firstAttribute="centerX" secondItem="gh3-yn-eyJ" secondAttribute="centerX" id="l7Q-nj-1br"/>
+                            <constraint firstItem="DXz-FT-KoJ" firstAttribute="height" secondItem="REg-CA-b1j" secondAttribute="height" multiplier="0.857143" id="oc7-y1-U2Z"/>
+                            <constraint firstItem="Xpw-f7-vF2" firstAttribute="top" secondItem="REg-CA-b1j" secondAttribute="baseline" constant="50" id="oo8-IV-EYk"/>
+                            <constraint firstItem="QHB-Lv-2Tm" firstAttribute="leading" secondItem="REg-CA-b1j" secondAttribute="leading" id="pad-kq-M96"/>
+                            <constraint firstItem="QHB-Lv-2Tm" firstAttribute="firstBaseline" secondItem="Xpw-f7-vF2" secondAttribute="firstBaseline" id="sFW-PL-vPa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="0xp-Mw-4U3" id="zJv-7d-wgm"/>
+                        <outlet property="passwordResetButton" destination="DXz-FT-KoJ" id="Y9S-z9-2E0"/>
+                        <outlet property="passwordTextField" destination="REg-CA-b1j" id="y0U-hg-M97"/>
+                    </connections>
+                </viewController>
+                <customObject id="CgT-kH-cZq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-373" y="2447.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Login" width="100" height="100"/>
+    </resources>
+</document>

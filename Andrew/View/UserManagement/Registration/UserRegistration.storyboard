@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="UoY-eR-qNH">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Registration Controller-->
+        <scene sceneID="7Ay-HM-cDo">
+            <objects>
+                <viewController id="UoY-eR-qNH" customClass="UserRegistrationController" customModule="Andrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="pTx-Gu-NU0">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-fV-39a">
+                                <rect key="frame" x="66" y="295" width="309" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="s36-2T-cGZ"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="center" title="A regisztrációhoz kérlek add meg a kért adatokat! Minden mező kitöltése kötelező!" id="dkR-LP-Qno">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VMm-5d-qtC" customClass="HeaderTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="123" y="337" width="194" height="43"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Regisztráció" id="K5x-OQ-yo3">
+                                    <font key="font" size="36" name="HelveticaNeue-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKg-EE-MdE">
+                                <rect key="frame" x="160" y="390" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="CLj-us-ltb"/>
+                                    <constraint firstAttribute="width" constant="100" id="R7W-Cd-CDL"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Registration" id="he1-EA-jEI"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-md-75A">
+                                <rect key="frame" x="261" y="84" width="115" height="32"/>
+                                <buttonCell key="cell" type="push" title="Regisztráció" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e19-35-aoc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="registrationButtonClicked:" target="UoY-eR-qNH" id="CFT-fM-UJf"/>
+                                    <outlet property="nextKeyView" destination="sMW-Kd-MOB" id="jLC-qu-nzN"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Jd-e3-VeB">
+                                <rect key="frame" x="64" y="84" width="92" height="32"/>
+                                <buttonCell key="cell" type="push" title="Mégsem" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qD3-1D-ZSd">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" target="UoY-eR-qNH" id="9OJ-tE-EsR"/>
+                                    <outlet property="nextKeyView" destination="XbS-md-75A" id="gMt-bZ-AEq"/>
+                                </connections>
+                            </button>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nun-dw-vfx" customClass="PasswordSecureTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="70" y="152" width="300" height="21"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Jelszó újra" drawsBackground="YES" usesSingleLineMode="YES" id="8Ll-lB-9JA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="9Jd-e3-VeB" id="0wI-pr-n7h"/>
+                                </connections>
+                            </secureTextField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-Kd-MOB" customClass="EmailTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="70" y="234" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UFO-f1-FpF"/>
+                                    <constraint firstAttribute="height" constant="21" id="vx6-aM-jiv"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="E-mail cím" drawsBackground="YES" id="viH-QR-z5H">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="p4u-oI-BY0" id="AHz-ht-H8e"/>
+                                </connections>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p4u-oI-BY0" customClass="PasswordSecureTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="70" y="193" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="PVk-o3-pDn"/>
+                                    <constraint firstAttribute="height" constant="21" id="rTM-MJ-m6Y"/>
+                                </constraints>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Jelszó" drawsBackground="YES" usesSingleLineMode="YES" id="7Xg-CH-UFy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="Nun-dw-vfx" id="fTP-Ah-N3g"/>
+                                </connections>
+                            </secureTextField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="p4u-oI-BY0" firstAttribute="top" secondItem="sMW-Kd-MOB" secondAttribute="bottom" constant="20" id="0Hs-F9-mT0"/>
+                            <constraint firstItem="zrN-fV-39a" firstAttribute="centerX" secondItem="VMm-5d-qtC" secondAttribute="centerX" id="0bI-d5-Rxh"/>
+                            <constraint firstItem="XbS-md-75A" firstAttribute="trailing" secondItem="Nun-dw-vfx" secondAttribute="trailing" id="0ly-qR-5xY"/>
+                            <constraint firstItem="iKg-EE-MdE" firstAttribute="centerX" secondItem="pTx-Gu-NU0" secondAttribute="centerX" constant="-10" id="5M5-BP-0T3"/>
+                            <constraint firstItem="Nun-dw-vfx" firstAttribute="top" secondItem="p4u-oI-BY0" secondAttribute="bottom" constant="20" id="9Ig-6L-EcB"/>
+                            <constraint firstItem="9Jd-e3-VeB" firstAttribute="firstBaseline" secondItem="XbS-md-75A" secondAttribute="firstBaseline" id="CRN-3y-afe"/>
+                            <constraint firstItem="Nun-dw-vfx" firstAttribute="trailing" secondItem="p4u-oI-BY0" secondAttribute="trailing" id="Cf5-V5-OSl"/>
+                            <constraint firstItem="sMW-Kd-MOB" firstAttribute="trailing" secondItem="p4u-oI-BY0" secondAttribute="trailing" id="DVh-O5-pf3"/>
+                            <constraint firstItem="sMW-Kd-MOB" firstAttribute="top" secondItem="zrN-fV-39a" secondAttribute="bottom" constant="40" id="FZK-ot-z7E"/>
+                            <constraint firstItem="9Jd-e3-VeB" firstAttribute="leading" secondItem="Nun-dw-vfx" secondAttribute="leading" id="L8d-2B-p0a"/>
+                            <constraint firstItem="sMW-Kd-MOB" firstAttribute="centerX" secondItem="pTx-Gu-NU0" secondAttribute="centerX" id="NI4-Oq-WSY"/>
+                            <constraint firstItem="iKg-EE-MdE" firstAttribute="centerY" secondItem="pTx-Gu-NU0" secondAttribute="centerY" constant="-140" id="SnG-6q-1AA"/>
+                            <constraint firstItem="XbS-md-75A" firstAttribute="top" secondItem="Nun-dw-vfx" secondAttribute="bottom" constant="40" id="XR9-RE-Fa2"/>
+                            <constraint firstItem="VMm-5d-qtC" firstAttribute="top" secondItem="iKg-EE-MdE" secondAttribute="bottom" constant="10" id="dss-vH-VGz"/>
+                            <constraint firstItem="9Jd-e3-VeB" firstAttribute="firstBaseline" secondItem="XbS-md-75A" secondAttribute="firstBaseline" id="fJ1-XN-wyk"/>
+                            <constraint firstItem="VMm-5d-qtC" firstAttribute="centerX" secondItem="pTx-Gu-NU0" secondAttribute="centerX" id="hMg-Zu-5BG"/>
+                            <constraint firstItem="Nun-dw-vfx" firstAttribute="leading" secondItem="p4u-oI-BY0" secondAttribute="leading" id="rSu-Kb-coP"/>
+                            <constraint firstItem="zrN-fV-39a" firstAttribute="top" secondItem="VMm-5d-qtC" secondAttribute="bottom" constant="10" id="zBs-zn-Ihw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="sMW-Kd-MOB" id="RjP-WQ-ydR"/>
+                        <outlet property="passwordTextField" destination="p4u-oI-BY0" id="FPD-dz-gDq"/>
+                        <outlet property="rePasswordTextField" destination="Nun-dw-vfx" id="Eo6-JD-Hex"/>
+                    </connections>
+                </viewController>
+                <customObject id="siR-tx-EcB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="CtN-Ke-S5k"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="2624.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Registration" width="100" height="100"/>
+    </resources>
+</document>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="aW4-Dg-85J">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application Settings Controller-->
+        <scene sceneID="Hv1-hW-3po">
+            <objects>
+                <viewController id="aW4-Dg-85J" customClass="ApplicationSettingsController" customModule="Andrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="btf-0H-UGB">
+                        <rect key="frame" x="0.0" y="0.0" width="747" height="452"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D5C-aY-NP5">
+                                <rect key="frame" x="40" y="358" width="56" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="cKe-Kz-gdq"/>
+                                    <constraint firstAttribute="width" constant="56" id="wNK-ih-9Ui"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSAdvanced" id="52q-tL-fB3"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dud-vr-oek" userLabel="Name Label">
+                                <rect key="frame" x="109" y="357" width="600" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Ueo-cV-ndb"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" editable="YES" title="Működési beállítások" id="vmd-UF-SAi">
+                                    <font key="font" metaFont="systemSemibold" size="48"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Dud-vr-oek" firstAttribute="centerY" secondItem="D5C-aY-NP5" secondAttribute="centerY" id="MMh-TH-4Jj"/>
+                            <constraint firstAttribute="trailing" secondItem="Dud-vr-oek" secondAttribute="trailing" constant="40" id="far-9A-UL8"/>
+                            <constraint firstItem="D5C-aY-NP5" firstAttribute="top" secondItem="btf-0H-UGB" secondAttribute="top" constant="40" id="ldL-eA-rYB"/>
+                            <constraint firstItem="D5C-aY-NP5" firstAttribute="leading" secondItem="btf-0H-UGB" secondAttribute="leading" constant="40" id="qCe-NU-XFZ"/>
+                            <constraint firstItem="Dud-vr-oek" firstAttribute="leading" secondItem="D5C-aY-NP5" secondAttribute="trailing" constant="15" id="qE0-VH-t8I"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="Ydk-bS-V1o" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331.5" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
+    </resources>
+</document>

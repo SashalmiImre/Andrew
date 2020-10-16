@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="G7O-zM-uuW">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Verification Controller-->
+        <scene sceneID="1VZ-Dt-G9P">
+            <objects>
+                <viewController id="G7O-zM-uuW" customClass="UserVerificationController" customModule="Andrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="MEU-Fc-iZ4">
+                        <rect key="frame" x="0.0" y="0.0" width="422" height="545"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="obj-j2-5Gr">
+                                <rect key="frame" x="59" y="268" width="304" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="f7W-o1-ooa"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="center" title="A bejelentkezéshez, kérlek add meg a regisztrált email-címedet, és a hozzátartozó jelszót!" id="b9R-Xk-W7g">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qV-uK-ZUr" customClass="HeaderTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="131" y="310" width="161" height="43"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ellenőrzés" id="9jC-vO-gn4">
+                                    <font key="font" size="36" name="HelveticaNeue-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8l-AG-VTJ">
+                                <rect key="frame" x="151" y="363" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Xs7-wx-HdV"/>
+                                    <constraint firstAttribute="height" constant="100" id="aAD-mi-704"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Verification" id="ERQ-T1-32I"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dLt-0x-AmF">
+                                <rect key="frame" x="148" y="229" width="127" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="E-mail újraküldése" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pUy-Tt-0aI">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resendVerificationEmailButtonClicked:" target="G7O-zM-uuW" id="JE3-j1-fG0"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1GO-kK-uCk">
+                                <rect key="frame" x="121" y="191" width="181" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="E-mail cím megváltoztatása" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dVl-gQ-d4B">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="emailChangeButtonClicked:" target="G7O-zM-uuW" id="lhh-Tf-g7x"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-BL-aLN">
+                                <rect key="frame" x="151" y="124" width="120" height="32"/>
+                                <buttonCell key="cell" type="push" title="Kijelentkezés" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eTk-9t-k24">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" target="G7O-zM-uuW" id="MRv-qT-EMb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dLt-0x-AmF" firstAttribute="centerX" secondItem="obj-j2-5Gr" secondAttribute="centerX" id="1VV-Ly-A50"/>
+                            <constraint firstItem="x8l-AG-VTJ" firstAttribute="centerX" secondItem="MEU-Fc-iZ4" secondAttribute="centerX" constant="-10" id="G3d-4a-kSw"/>
+                            <constraint firstItem="x8l-AG-VTJ" firstAttribute="centerY" secondItem="MEU-Fc-iZ4" secondAttribute="centerY" constant="-140" id="GVw-Pv-PS2"/>
+                            <constraint firstItem="VPg-BL-aLN" firstAttribute="top" secondItem="1GO-kK-uCk" secondAttribute="bottom" constant="40" id="Jct-DW-bCZ"/>
+                            <constraint firstItem="1GO-kK-uCk" firstAttribute="centerX" secondItem="dLt-0x-AmF" secondAttribute="centerX" id="L8H-rH-RIb"/>
+                            <constraint firstItem="obj-j2-5Gr" firstAttribute="top" secondItem="1qV-uK-ZUr" secondAttribute="bottom" constant="10" id="MXT-Fe-Vxt"/>
+                            <constraint firstItem="1GO-kK-uCk" firstAttribute="top" secondItem="dLt-0x-AmF" secondAttribute="bottom" constant="20" id="Rxm-qW-OYm"/>
+                            <constraint firstItem="1qV-uK-ZUr" firstAttribute="centerX" secondItem="MEU-Fc-iZ4" secondAttribute="centerX" id="Yq1-pe-PoY"/>
+                            <constraint firstItem="obj-j2-5Gr" firstAttribute="centerX" secondItem="1qV-uK-ZUr" secondAttribute="centerX" id="ZQG-GZ-3IK"/>
+                            <constraint firstItem="VPg-BL-aLN" firstAttribute="centerX" secondItem="dLt-0x-AmF" secondAttribute="centerX" id="dwh-gm-5BA"/>
+                            <constraint firstItem="1qV-uK-ZUr" firstAttribute="top" secondItem="x8l-AG-VTJ" secondAttribute="bottom" constant="10" id="eSc-4U-DyD"/>
+                            <constraint firstItem="dLt-0x-AmF" firstAttribute="top" secondItem="obj-j2-5Gr" secondAttribute="bottom" constant="20" id="ssU-5L-wjG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoText" destination="obj-j2-5Gr" id="7H7-4Z-IZT"/>
+                    </connections>
+                </viewController>
+                <customObject id="QTu-Id-EJk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="J6l-sk-IPQ"/>
+            </objects>
+            <point key="canvasLocation" x="-373" y="2447.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Verification" width="100" height="100"/>
+    </resources>
+</document>

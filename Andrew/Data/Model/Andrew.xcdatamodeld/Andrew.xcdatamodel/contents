@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Article" representedClassName="Article" syncable="YES" codeGenerationType="class">
+        <attribute name="editor" optional="YES" attributeType="String"/>
+        <attribute name="endPageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="homeFolder" optional="YES" attributeType="URI"/>
+        <attribute name="isLeaf" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="owner" optional="YES" attributeType="String"/>
+        <attribute name="startPageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stateRawValue" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="publication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publication" inverseName="contents" inverseEntity="Publication"/>
+    </entity>
+    <entity name="Deadline" representedClassName="Deadline" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endPageNumber" attributeType="Integer 16" defaultValueString="52" usesScalarValueType="YES"/>
+        <attribute name="startPageNumber" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="publication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Publication" inverseName="deadlines" inverseEntity="Publication"/>
+    </entity>
+    <entity name="Publication" representedClassName="Publication" syncable="YES">
+        <attribute name="correctedSubfolder" attributeType="String" defaultValueString="__TORDELVE/__OLVASVA"/>
+        <attribute name="designedSubfolder" attributeType="String" defaultValueString="__TORDELVE"/>
+        <attribute name="homeFolder" attributeType="URI"/>
+        <attribute name="isLeaf" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isSpecialEdition" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pageNumber" attributeType="Integer 16" minValueString="8" defaultValueString="52" usesScalarValueType="YES"/>
+        <attribute name="pdfSubfolder" attributeType="String" defaultValueString="__PDF"/>
+        <attribute name="printableSubfolder" attributeType="String" defaultValueString="__TORDELVE/__OLVASVA/__LEVILAGITHATO"/>
+        <attribute name="printedSubfolder" attributeType="String" defaultValueString="__TORDELVE/__OLVASVA/__LEVIL"/>
+        <attribute name="retouchSubfolder" optional="YES" attributeType="String"/>
+        <attribute name="subName" optional="YES" attributeType="String"/>
+        <relationship name="contents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="publication" inverseEntity="Article"/>
+        <relationship name="deadlines" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Deadline" inverseName="publication" inverseEntity="Deadline"/>
+    </entity>
+    <elements>
+        <element name="Article" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="Deadline" positionX="-63" positionY="54" width="128" height="103"/>
+        <element name="Publication" positionX="-54" positionY="-9" width="128" height="253"/>
+    </elements>
+</model>

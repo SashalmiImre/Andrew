@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="hOZ-Ji-AyF">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Settings Controller-->
+        <scene sceneID="x34-Ut-bb6">
+            <objects>
+                <viewController id="hOZ-Ji-AyF" customClass="UserSettingsController" customModule="Andrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="1Xd-vh-W59">
+                        <rect key="frame" x="0.0" y="0.0" width="549" height="599"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HM1-u1-ZdV">
+                                <rect key="frame" x="55" y="311" width="426" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="422" id="OQD-G9-en8"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="center" id="DRE-eM-7fN">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eoe-Qi-YcB" customClass="HeaderTextField" customModule="Andrew" customModuleProvider="target">
+                                <rect key="frame" x="189" y="337" width="171" height="43"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Beállítások" id="byx-Zr-7Ic">
+                                    <font key="font" size="36" name="HelveticaNeue-Light"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dcs-bk-Uk0">
+                                <rect key="frame" x="215" y="390" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UPp-I8-08d"/>
+                                    <constraint firstAttribute="height" constant="100" id="XX0-65-Jrc"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Settings" id="6yK-ni-6zB"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TA4-2u-ZCb">
+                                <rect key="frame" x="269" y="125" width="162" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="aEu-yn-dBU"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Beállítások mentése" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eW3-XZ-15s">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="multiButtonClicked:" target="hOZ-Ji-AyF" id="JPm-TC-seg"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HTe-nc-qxw">
+                                <rect key="frame" x="119" y="125" width="120" height="32"/>
+                                <buttonCell key="cell" type="push" title="Kijelentkezés" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s3q-aP-Ebw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="logOutButtonClicked:" target="hOZ-Ji-AyF" id="zix-YT-JJf"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rp8-P5-XPc">
+                                <rect key="frame" x="125" y="269" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="BUa-gf-z9R"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Név" drawsBackground="YES" id="cby-me-xbq">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U74-1P-Cdg">
+                                <rect key="frame" x="196" y="192" width="157" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="Jelszó megváltoztatása" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KOi-wG-fEC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="passwordChangeButtonClicked:" target="hOZ-Ji-AyF" id="8DM-4S-4hy"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ch7-zF-zMM">
+                                <rect key="frame" x="184" y="230" width="181" height="19"/>
+                                <buttonCell key="cell" type="recessed" title="E-mail cím megváltoztatása" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6pZ-Ik-Cwk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="emailChangeButtonClicked:" target="hOZ-Ji-AyF" id="GYC-RB-xsb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="rp8-P5-XPc" firstAttribute="centerX" secondItem="1Xd-vh-W59" secondAttribute="centerX" id="Csa-F2-mNi"/>
+                            <constraint firstItem="HTe-nc-qxw" firstAttribute="firstBaseline" secondItem="TA4-2u-ZCb" secondAttribute="firstBaseline" id="EKm-9o-Ela"/>
+                            <constraint firstItem="Ch7-zF-zMM" firstAttribute="centerX" secondItem="rp8-P5-XPc" secondAttribute="centerX" id="QPc-Jb-gil"/>
+                            <constraint firstItem="Dcs-bk-Uk0" firstAttribute="centerX" secondItem="1Xd-vh-W59" secondAttribute="centerX" constant="-10" id="TZw-2r-ict"/>
+                            <constraint firstItem="U74-1P-Cdg" firstAttribute="centerX" secondItem="Ch7-zF-zMM" secondAttribute="centerX" id="UKY-TK-Mba"/>
+                            <constraint firstItem="U74-1P-Cdg" firstAttribute="top" secondItem="Ch7-zF-zMM" secondAttribute="bottom" constant="20" id="XEm-x3-Pi8"/>
+                            <constraint firstItem="rp8-P5-XPc" firstAttribute="top" secondItem="HM1-u1-ZdV" secondAttribute="bottom" constant="21" id="aMM-FO-cqO"/>
+                            <constraint firstItem="HTe-nc-qxw" firstAttribute="leading" secondItem="rp8-P5-XPc" secondAttribute="leading" id="f6t-8u-poi"/>
+                            <constraint firstItem="TA4-2u-ZCb" firstAttribute="top" secondItem="U74-1P-Cdg" secondAttribute="bottom" constant="40" id="gSd-WE-MXi"/>
+                            <constraint firstItem="TA4-2u-ZCb" firstAttribute="trailing" secondItem="rp8-P5-XPc" secondAttribute="trailing" id="gfr-EA-NVw"/>
+                            <constraint firstItem="HM1-u1-ZdV" firstAttribute="centerX" secondItem="eoe-Qi-YcB" secondAttribute="centerX" constant="-6.5" id="khi-gr-7GQ"/>
+                            <constraint firstItem="eoe-Qi-YcB" firstAttribute="centerX" secondItem="1Xd-vh-W59" secondAttribute="centerX" id="pjc-zM-Zbl"/>
+                            <constraint firstItem="Ch7-zF-zMM" firstAttribute="top" secondItem="rp8-P5-XPc" secondAttribute="bottom" constant="20" id="rCw-6V-nNC"/>
+                            <constraint firstItem="eoe-Qi-YcB" firstAttribute="top" secondItem="Dcs-bk-Uk0" secondAttribute="bottom" constant="10" id="usp-GD-H7i"/>
+                            <constraint firstItem="Dcs-bk-Uk0" firstAttribute="centerY" secondItem="1Xd-vh-W59" secondAttribute="centerY" constant="-140" id="wYb-br-aSG"/>
+                            <constraint firstItem="HM1-u1-ZdV" firstAttribute="top" secondItem="eoe-Qi-YcB" secondAttribute="bottom" constant="10" id="ygI-7e-fja"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerInformativeText" destination="HM1-u1-ZdV" id="VwM-j8-oSE"/>
+                        <outlet property="multiButton" destination="TA4-2u-ZCb" id="pap-jp-Hps"/>
+                        <outlet property="nameTextField" destination="rp8-P5-XPc" id="CTX-v4-f2G"/>
+                    </connections>
+                </viewController>
+                <customObject id="Lms-qv-L7k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-358.5" y="2624.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Settings" width="100" height="100"/>
+    </resources>
+</document>

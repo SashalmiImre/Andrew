@@ -2,12 +2,11 @@
 //  AndrewTests.swift
 //  AndrewTests
 //
-//  Created by Sashalmi Imre on 2020. 07. 09..
+//  Created by Sashalmi Imre on 2020. 07. 12..
 //  Copyright © 2020. Sashalmi Imre. All rights reserved.
 //
 
 import XCTest
-@testable import Andrew
 
 class AndrewTests: XCTestCase {
 
