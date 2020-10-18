@@ -16,7 +16,7 @@ class UserRegistrationController: NSViewController {
     @IBOutlet weak var rePasswordTextField: PasswordSecureTextField!
     
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
-        AppDelegate.mainViewController.setAppropriateViewController()
+        AppDelegate.mainContentController.setAppropriateViewController()
     }
     
     @IBAction func registrationButtonClicked(_ sender: NSButton) {

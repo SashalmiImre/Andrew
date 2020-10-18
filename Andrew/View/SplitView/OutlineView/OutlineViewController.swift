@@ -28,7 +28,7 @@ class OutlineViewController: NSViewController {
     let delegate = OutlineViewDelegate()
     
     @IBAction func userLoginClicked(_ sender: NSButton) {
-        AppDelegate.mainViewController.changeViewController(to: "UserSettings")
+        AppDelegate.mainContentController.changeViewController(to: "UserSettings")
     }
     
     override func viewDidLoad() {

@@ -41,7 +41,7 @@ class UserVerificationController: NSViewController, InProgressVisualizable {
         loggedUser.reload { (error) in
             guard error == nil,
                   loggedUser.isEmailVerified else { return }
-            AppDelegate.mainViewController.setAppropriateViewController()
+            AppDelegate.mainContentController.setAppropriateViewController()
         }
     }
     
@@ -85,7 +85,7 @@ class UserVerificationController: NSViewController, InProgressVisualizable {
                 self.showAlert(with: error)
                 return
             }
-            AppDelegate.mainViewController.setAppropriateViewController()
+            AppDelegate.mainContentController.setAppropriateViewController()
         }
     }
     

@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     static var defaults: DefaultValues!
     static var dbService: DBService!
-    static var mainViewController: MainViewController!
+    static var mainContentController: MainWindowController!
     static var reachability: Reachability!
 
     override init() {
