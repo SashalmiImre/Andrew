@@ -9,8 +9,13 @@
 import Foundation
 import Cocoa
 
-class SplitViewController: NSSplitViewController {
+class SplitViewController: NSSplitViewController, InProgressVisualizable {
+   
+    var inProgress: Bool = false
+    
 
+    // MARK: - View cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(onSelectionChanged(notification:)), name: OutlineViewController.selectionChangedNotificationName, object: nil)
@@ -20,6 +25,9 @@ class SplitViewController: NSSplitViewController {
         super.viewWillDisappear()
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
+    // MARK: - Notification observer function
     
     @objc func onSelectionChanged(notification: NSNotification) {
         guard let selectedNode = notification.userInfo?["Node"] as? NSTreeNode else { return }

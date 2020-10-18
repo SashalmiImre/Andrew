@@ -81,7 +81,7 @@ class UserLoginController: NSViewController, FormValidatable, InProgressVisualiz
 //        let viewController = storyboard.instantiateInitialController() as! NSViewController
 //        let mainViewController = self.parent as! MainViewController
 //        mainViewController.changeViewController(to: viewController)
-        AppDelegate.mainViewController.changeViewController(to: "UserRegistration")
+        AppDelegate.mainContentController.changeViewController(to: "UserRegistration")
     }
     
     

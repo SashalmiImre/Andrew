@@ -84,7 +84,7 @@ class UserSettingsController: NSViewController, FormValidatable, InProgressVisua
     private func changeUserData() {
         guard let loggedUser = AppDelegate.defaults.loggedUser else { return }
         guard loggedUser.displayName != self.nameTextField.stringValue else {
-            AppDelegate.mainViewController.setAppropriateViewController()
+            AppDelegate.mainContentController.setAppropriateViewController()
             return
         }
         self.inProgress = true
@@ -97,7 +97,7 @@ class UserSettingsController: NSViewController, FormValidatable, InProgressVisua
                 self.showAlert(with: error)
                 return
             }
-            AppDelegate.mainViewController.setAppropriateViewController()
+            AppDelegate.mainContentController.setAppropriateViewController()
         }
     }
     
@@ -119,7 +119,7 @@ class UserSettingsController: NSViewController, FormValidatable, InProgressVisua
                         self.showAlert(with: error)
                         return
                     }
-                    AppDelegate.mainViewController.setAppropriateViewController()
+                    AppDelegate.mainContentController.setAppropriateViewController()
                 }
             }
             self.inProgress = false

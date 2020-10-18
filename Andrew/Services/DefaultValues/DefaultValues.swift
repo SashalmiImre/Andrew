@@ -31,7 +31,7 @@ class DefaultValues {
         Auth.auth().languageCode = "hu"
         self.authenticationHandler = Auth.auth().addStateDidChangeListener { (auth, user) in
             self.loggedUser = user
-            AppDelegate.mainViewController.setAppropriateViewController()
+            AppDelegate.mainContentController.setAppropriateViewController()
         }
     }
     
