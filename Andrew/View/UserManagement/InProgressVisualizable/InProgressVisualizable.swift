@@ -41,7 +41,6 @@ extension InProgressVisualizable {
         } else {
             blurView.backgroundFilters = [filter]
         }
-
         view.addSubview(blurView, positioned: .above, relativeTo: nil)
         blurView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         blurView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
