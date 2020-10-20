@@ -10,10 +10,16 @@ import Foundation
 import Cocoa
 import FirebaseAuth
 
-class UserRegistrationController: NSViewController {
+class UserRegistrationController: NSViewController, InProgressVisualizable {
+    
+    var inProgress: Bool = false
+    
     @IBOutlet weak var emailTextField: EmailTextField!
     @IBOutlet weak var passwordTextField: PasswordSecureTextField!
     @IBOutlet weak var rePasswordTextField: PasswordSecureTextField!
+    
+    
+    // MARK: - IBActions
     
     @IBAction func cancelButtonClicked(_ sender: NSButton) {
         AppDelegate.mainContentController.setAppropriateViewController()
@@ -38,6 +44,9 @@ class UserRegistrationController: NSViewController {
         }
     }
     
+    
+    // MARK: - View events
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -46,6 +55,9 @@ class UserRegistrationController: NSViewController {
         super.viewDidAppear()
         self.emailTextField.becomeFirstResponder()
     }
+    
+    
+    // MARK: - Form validation
     
     private func validateForm() -> Result<UserCredentials, RegistrationFormError> {
         if !self.emailTextField.isValid(emptyIsValid: false) {
