@@ -11,7 +11,11 @@ import Cocoa
 
 class SplitViewController: NSSplitViewController, InProgressVisualizable {
    
-    var inProgress: Bool = false
+    var inProgress: Bool = false {
+        didSet {
+            self.setAppearance()
+        }
+    }
     
 
     // MARK: - View cycle
