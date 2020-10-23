@@ -18,6 +18,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static var mainContentController: MainWindowController!
     static var reachability: Reachability!
 
+    
+    // MARK: - Initialization
+    
     override init() {
         ValueTransformer.setValueTransformer(StringToNSImage(), forName: .stringToNSImage)
         super.init()
@@ -27,6 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.reachability = Reachability()
         AppDelegate.reachability.delegate = self
     }
+    
+    
+    // MARK: - Application events
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -40,6 +46,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 }
+
+
+// MARK: - Reachability delegate
 
 extension AppDelegate: ReachabilityDelegate {
     func handler(_ handler: Reachability, stateDidChange event: Reachability.Event) {

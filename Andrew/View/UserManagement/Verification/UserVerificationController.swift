@@ -22,8 +22,8 @@ class UserVerificationController: NSViewController, InProgressVisualizable {
     var inProgress: Bool = false {
         didSet { self.setAppearance() }
     }
-    func informationView() -> NSView? { return nil }
-    
+    var informationViewName: String? = nil
+
     
     // MARK: - View cycle
     override func viewDidLoad() {

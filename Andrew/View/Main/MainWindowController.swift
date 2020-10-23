@@ -25,6 +25,9 @@ class MainWindowController: NSWindowController {
                          object: nil, queue: nil) { [unowned self] (notification) in
                 guard let event = notification.userInfo?["event"] as? Reachability.Event else { return }
                 guard let inProgressVisualizableViewController = self.contentViewController as? InProgressVisualizable else { return }
+                if event == .notReachable {
+                    inProgressVisualizableViewController.informationViewName = "ReachabilityInformationView"
+                }
                 inProgressVisualizableViewController.inProgress = event == .notReachable
             }
         AppDelegate.mainContentController = self
@@ -50,7 +53,10 @@ class MainWindowController: NSWindowController {
         let animationView = CrossfadeAnimationView(from: currentViewController, to: targetViewController)
         window.contentView = animationView
         animationView.animate {
-            targetViewController.inProgress = !AppDelegate.reachability.isReachable
+            if !AppDelegate.reachability.isReachable {
+                targetViewController.informationViewName = "ReachabilityInformationView"
+                targetViewController.inProgress = true
+            }
             window.contentViewController = targetViewController
             window.contentView = targetViewController.view
         }

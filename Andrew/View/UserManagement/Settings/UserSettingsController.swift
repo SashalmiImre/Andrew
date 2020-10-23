@@ -22,8 +22,8 @@ class UserSettingsController: NSViewController, FormValidatable, InProgressVisua
     @objc var inProgress: Bool = false {
         didSet { self.setAppearance() }
     }
-    func informationView() -> NSView? { return nil }
-    
+    var informationViewName: String? = nil
+
     
     // MARK: - Button actions
     

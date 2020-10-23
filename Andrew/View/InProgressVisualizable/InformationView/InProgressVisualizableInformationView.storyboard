@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Dt-Sc-BWw">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--In Progress Visualizable Information View Controller-->
+        <scene sceneID="Kt9-Nf-Fi4">
+            <objects>
+                <viewController id="3Dt-Sc-BWw" customClass="InProgressVisualizableInformationViewController" customModule="Andrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="0xd-zb-RQV" customClass="MouseEventBlindView" customModule="Andrew" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator wantsLayer="YES" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-Ii-fvD">
+                                <rect key="frame" x="188" y="113" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="BGb-d2-tQT"/>
+                                    <constraint firstAttribute="width" constant="75" id="Vr2-5V-7QG"/>
+                                </constraints>
+                            </progressIndicator>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KAA-Ii-fvD" firstAttribute="centerY" secondItem="0xd-zb-RQV" secondAttribute="centerY" id="SLY-sG-nzm"/>
+                            <constraint firstItem="KAA-Ii-fvD" firstAttribute="centerX" secondItem="0xd-zb-RQV" secondAttribute="centerX" id="s77-IB-GuP"/>
+                        </constraints>
+                        <backgroundFilters>
+                            <ciFilter name="CIGaussianBlur">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputRadius" value="10"/>
+                                </configuration>
+                            </ciFilter>
+                            <ciFilter name="CIVignette">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputIntensity" value="1"/>
+                                    <real key="inputRadius" value="2"/>
+                                </configuration>
+                            </ciFilter>
+                        </backgroundFilters>
+                    </view>
+                    <connections>
+                        <outlet property="progressBar" destination="KAA-Ii-fvD" id="O8a-b0-Ycq"/>
+                    </connections>
+                </viewController>
+                <customObject id="Z5E-Lk-26f" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="dbF-fa-6RS"/>
+            </objects>
+            <point key="canvasLocation" x="-374" y="155"/>
+        </scene>
+    </scenes>
+</document>

@@ -16,8 +16,8 @@ class SplitViewController: NSSplitViewController, InProgressVisualizable {
     var inProgress: Bool = false {
         didSet { self.setAppearance() }
     }
-    func informationView() -> NSView? { return nil }
-    
+    var informationViewName: String? = nil
+
 
     // MARK: - View cycle
     

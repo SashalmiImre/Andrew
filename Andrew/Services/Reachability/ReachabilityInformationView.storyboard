@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="dR0-ox-y0d">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="2kv-Rc-MB9">
+            <objects>
+                <viewController id="dR0-ox-y0d" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="6HB-hB-f9k" customClass="MouseEventBlindView" customModule="Andrew" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jzy-gO-GCM">
+                                <rect key="frame" x="72" y="133" width="307" height="35"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="A hálózat nem elérhető!" id="xeV-ae-bBc">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gzp-0B-W4f">
+                                <rect key="frame" x="83" y="70" width="284" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="OUQ-J6-wqq"/>
+                                    <constraint firstAttribute="height" constant="55" id="W9i-KP-YgR"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="center" title="A hálózat jelenleg nem elérhető! A hiba megszűnésekor, a munkamenet automatikusan folytatódik." id="3B3-wT-mCt">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Mx-OUm">
+                                <rect key="frame" x="171" y="188" width="108" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Oth-ou-4bR"/>
+                                    <constraint firstAttribute="width" constant="108" id="QGa-jE-6TQ"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NoConnection" id="tbq-4G-Jjh"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Jzy-gO-GCM" firstAttribute="centerX" secondItem="6HB-hB-f9k" secondAttribute="centerX" id="B07-RL-mr1"/>
+                            <constraint firstItem="Jzy-gO-GCM" firstAttribute="centerY" secondItem="6HB-hB-f9k" secondAttribute="centerY" id="Igx-la-nhK"/>
+                            <constraint firstItem="gzp-0B-W4f" firstAttribute="centerX" secondItem="Jzy-gO-GCM" secondAttribute="centerX" id="MCm-cP-mGr"/>
+                            <constraint firstItem="vMs-Mx-OUm" firstAttribute="centerX" secondItem="Jzy-gO-GCM" secondAttribute="centerX" id="fPW-eI-Q5c"/>
+                            <constraint firstItem="gzp-0B-W4f" firstAttribute="top" secondItem="Jzy-gO-GCM" secondAttribute="bottom" constant="8" symbolic="YES" id="ojo-62-OQA"/>
+                            <constraint firstItem="Jzy-gO-GCM" firstAttribute="top" secondItem="vMs-Mx-OUm" secondAttribute="bottom" constant="20" id="tmc-Pw-UcC"/>
+                        </constraints>
+                        <backgroundFilters>
+                            <ciFilter name="CIGaussianBlur">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputRadius" value="10"/>
+                                </configuration>
+                            </ciFilter>
+                            <ciFilter name="CIVignette">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputIntensity" value="1"/>
+                                    <real key="inputRadius" value="2"/>
+                                </configuration>
+                            </ciFilter>
+                        </backgroundFilters>
+                    </view>
+                </viewController>
+                <customObject id="lBZ-CD-qFH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NoConnection" width="108" height="97"/>
+    </resources>
+</document>
