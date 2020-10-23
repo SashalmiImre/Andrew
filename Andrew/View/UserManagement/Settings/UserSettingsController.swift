@@ -11,15 +11,19 @@ import Cocoa
 import FirebaseAuth
 
 class UserSettingsController: NSViewController, FormValidatable, InProgressVisualizable {
-    
-    @objc var inProgress: Bool = false {
-        didSet { self.setAppearance() }
-    }
-    
+
     @IBOutlet weak var nameTextField: NSTextField!
     @IBOutlet weak var headerInformativeText: NSTextField!
     @IBOutlet weak var multiButton: NSButton!
 
+    
+    // MARK: - InProgressVisualizable conformance
+    
+    @objc var inProgress: Bool = false {
+        didSet { self.setAppearance() }
+    }
+    func informationView() -> NSView? { return nil }
+    
     
     // MARK: - Button actions
     

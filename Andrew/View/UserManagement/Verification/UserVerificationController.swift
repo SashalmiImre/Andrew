@@ -11,15 +11,19 @@ import Cocoa
 import FirebaseAuth
 
 class UserVerificationController: NSViewController, InProgressVisualizable {
-    
-    var inProgress: Bool = false {
-        didSet {
-            self.setAppearance()
-        }
-    }
+
     var timer: Timer!
     
     @IBOutlet weak var infoText: NSTextField!
+    
+    
+    // MARK: - InProgressVisualizable conformance
+    
+    var inProgress: Bool = false {
+        didSet { self.setAppearance() }
+    }
+    func informationView() -> NSView? { return nil }
+    
     
     // MARK: - View cycle
     override func viewDidLoad() {

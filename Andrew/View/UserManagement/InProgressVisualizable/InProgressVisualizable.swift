@@ -11,18 +11,19 @@ import Cocoa
 
 protocol InProgressVisualizable where Self: NSViewController  {
     var inProgress: Bool { get set }
+    func informationView() -> NSView?
 }
 
 extension InProgressVisualizable {
     func setAppearance() {
         if self.inProgress {
             self.addBlurView(for: self.view)
-            self.addProgressIndicator(to: self.view)
+            self.addInformationView(to: self.view)
         } else {
             self.removeEffects(from: self.view)
         }
     }
-    
+
     private func addBlurView(for view: NSView) {
         guard let filter = CIFilter(name:"CIGaussianBlur") else { return }
         filter.setValue(5, forKey: kCIInputRadiusKey)
@@ -46,19 +47,23 @@ extension InProgressVisualizable {
         blurView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    private func addProgressIndicator(to parentView: NSView) {
+    private func addInformationView(to parentView: NSView) {
+        let informationView = self.informationView() ?? self.progressIndicator()
+        informationView.identifier = NSUserInterfaceItemIdentifier(rawValue: "TEMPORARY_EFFECT_VIEW")
+        parentView.addSubview(informationView, positioned: .above, relativeTo: nil)
+        informationView.centerXAnchor.constraint(equalTo: parentView.centerXAnchor).isActive = true
+        informationView.centerYAnchor.constraint(equalTo: parentView.centerYAnchor).isActive = true
+    }
+    
+    private func progressIndicator() -> NSView {
         let progressIndicator = NSProgressIndicator()
-        parentView.addSubview(progressIndicator, positioned: .above, relativeTo: nil)
-
-        progressIndicator.identifier = NSUserInterfaceItemIdentifier(rawValue: "TEMPORARY_EFFECT_VIEW")
         progressIndicator.style = .spinning
         progressIndicator.isIndeterminate = true
         progressIndicator.translatesAutoresizingMaskIntoConstraints = false
         progressIndicator.widthAnchor.constraint(equalToConstant: 75.0).isActive = true
         progressIndicator.heightAnchor.constraint(equalToConstant: 75.0).isActive = true
-        progressIndicator.centerXAnchor.constraint(equalTo: parentView.centerXAnchor).isActive = true
-        progressIndicator.centerYAnchor.constraint(equalTo: parentView.centerYAnchor).isActive = true
         progressIndicator.startAnimation(nil)
+        return progressIndicator
     }
     
     private func removeEffects(from view: NSView) {

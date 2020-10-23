@@ -11,12 +11,19 @@ import Cocoa
 import FirebaseAuth
 
 class UserRegistrationController: NSViewController, InProgressVisualizable {
-    
-    var inProgress: Bool = false
-    
+        
     @IBOutlet weak var emailTextField: EmailTextField!
     @IBOutlet weak var passwordTextField: PasswordSecureTextField!
     @IBOutlet weak var rePasswordTextField: PasswordSecureTextField!
+    
+    
+    // MARK: - InProgressVisualizable conformance
+    
+    var inProgress: Bool = false {
+        didSet { self.setAppearance() }
+    }
+    
+    func informationView() -> NSView? { return nil }
     
     
     // MARK: - IBActions

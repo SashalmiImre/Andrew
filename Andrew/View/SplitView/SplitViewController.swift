@@ -11,11 +11,12 @@ import Cocoa
 
 class SplitViewController: NSSplitViewController, InProgressVisualizable {
    
+    // MARK: - InProgressVisualizable conformance
+    
     var inProgress: Bool = false {
-        didSet {
-            self.setAppearance()
-        }
+        didSet { self.setAppearance() }
     }
+    func informationView() -> NSView? { return nil }
     
 
     // MARK: - View cycle
