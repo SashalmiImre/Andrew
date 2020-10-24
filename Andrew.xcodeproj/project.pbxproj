@@ -20,6 +20,9 @@
 		4314A48A24F2473200F92D59 /* ValidatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314A48924F2473200F92D59 /* ValidatableProtocol.swift */; };
 		4315B4B0250E289B00CC723B /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4315B4B3250E490B00CC723B /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4315B4B2250E490B00CC723B /* UserLogin.storyboard */; };
+		431B47C82542C1B9001B7F83 /* ReachabilityInformationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431B47C72542C1B9001B7F83 /* ReachabilityInformationView.storyboard */; };
+		431B47CD25437359001B7F83 /* InProgressVisualizableInformationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431B47CC25437359001B7F83 /* InProgressVisualizableInformationView.storyboard */; };
+		431B47D125438536001B7F83 /* InProgressVisualizableInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B47D025438536001B7F83 /* InProgressVisualizableInformationViewController.swift */; };
 		431C9C6024FA7231003DC70B /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9C5F24FA7231003DC70B /* DefaultValues.swift */; };
 		431C9C6224FA73B5003DC70B /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 431C9C6124FA73B5003DC70B /* Defaults.plist */; };
 		432A2C3725136D150007B9AE /* UserSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432A2C3625136D150007B9AE /* UserSettingsController.swift */; };
@@ -138,6 +141,9 @@
 		4314909A24DA03ED0048E3CF /* PublicationEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationEventHandler.swift; sourceTree = "<group>"; };
 		4314A48924F2473200F92D59 /* ValidatableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableProtocol.swift; sourceTree = "<group>"; };
 		4315B4B2250E490B00CC723B /* UserLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
+		431B47C72542C1B9001B7F83 /* ReachabilityInformationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReachabilityInformationView.storyboard; sourceTree = "<group>"; };
+		431B47CC25437359001B7F83 /* InProgressVisualizableInformationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InProgressVisualizableInformationView.storyboard; sourceTree = "<group>"; };
+		431B47D025438536001B7F83 /* InProgressVisualizableInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressVisualizableInformationViewController.swift; sourceTree = "<group>"; };
 		431C9C5F24FA7231003DC70B /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
 		431C9C6124FA73B5003DC70B /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		432A2C3625136D150007B9AE /* UserSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsController.swift; sourceTree = "<group>"; tabWidth = 3; };
@@ -259,6 +265,7 @@
 		43092C142509D44400F22510 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
+				431B47C72542C1B9001B7F83 /* ReachabilityInformationView.storyboard */,
 				43A76294252A619F00AC750B /* Reachability.swift */,
 				43092C102509D3DD00F22510 /* ReachabilityDelegate.swift */,
 			);
@@ -298,7 +305,6 @@
 				43CBF5682511D25400FC0BC5 /* UserCredentials.swift */,
 				43E61BDC25125D57006EBAA2 /* ServerAuthenticationErrors.swift */,
 				43D9AD1F2515C7A900DB8267 /* FormValidatable.swift */,
-				431B2B3F2535665B001ADD55 /* InProgressVisualizable */,
 				43AB6D9F2512BACD00F16EA7 /* CustomTextFields */,
 			);
 			path = UserManagement;
@@ -307,10 +313,20 @@
 		431B2B3F2535665B001ADD55 /* InProgressVisualizable */ = {
 			isa = PBXGroup;
 			children = (
+				431B47D325438569001B7F83 /* InformationView */,
 				43976244252910D100CAF43A /* InProgressVisualizable.swift */,
 				43C225F025356926005493E0 /* MouseEventBlindView.swift */,
 			);
 			path = InProgressVisualizable;
+			sourceTree = "<group>";
+		};
+		431B47D325438569001B7F83 /* InformationView */ = {
+			isa = PBXGroup;
+			children = (
+				431B47CC25437359001B7F83 /* InProgressVisualizableInformationView.storyboard */,
+				431B47D025438536001B7F83 /* InProgressVisualizableInformationViewController.swift */,
+			);
+			path = InformationView;
 			sourceTree = "<group>";
 		};
 		431C9C6324FA754B003DC70B /* DefaultValues */ = {
@@ -494,6 +510,7 @@
 				43934E24250FC74000C96DE9 /* Main */,
 				4315B4B4250E4F0000CC723B /* UserManagement */,
 				43E0FBBC24E448C6009E9DBE /* SplitView */,
+				431B2B3F2535665B001ADD55 /* InProgressVisualizable */,
 				437E4BBD24EB2BFE0032963A /* ValueTransformers */,
 				4371CDBA24B7C1320099D22F /* Assets.xcassets */,
 				43B5808324DAEC3B006F6A2C /* DragAndDropView.swift */,
@@ -744,6 +761,8 @@
 				4371CDBB24B7C1320099D22F /* Assets.xcassets in Resources */,
 				4371CDBE24B7C1320099D22F /* Main.storyboard in Resources */,
 				43A76290252A1FA800AC750B /* UserVerification.storyboard in Resources */,
+				431B47CD25437359001B7F83 /* InProgressVisualizableInformationView.storyboard in Resources */,
+				431B47C82542C1B9001B7F83 /* ReachabilityInformationView.storyboard in Resources */,
 				435299B024E6A9A70032592B /* ApplicationSettings.storyboard in Resources */,
 				435299B324E6AA860032592B /* ArticleDetails.storyboard in Resources */,
 				4315B4B3250E490B00CC723B /* UserLogin.storyboard in Resources */,
@@ -846,6 +865,7 @@
 				4314A48A24F2473200F92D59 /* ValidatableProtocol.swift in Sources */,
 				43C4647E24E9D4F3007AEE7F /* ValidationBindableResult.swift in Sources */,
 				4397377E25257AA30077EADB /* UserSettingsEmailChangeValidationDetails.swift in Sources */,
+				431B47D125438536001B7F83 /* InProgressVisualizableInformationViewController.swift in Sources */,
 				4314909B24DA03ED0048E3CF /* PublicationEventHandler.swift in Sources */,
 				43CBF5692511D25400FC0BC5 /* UserCredentials.swift in Sources */,
 				43D9FE4424BBB178003C4046 /* ArticleEventHandler.swift in Sources */,

@@ -11,12 +11,17 @@ import Cocoa
 import FirebaseAuth
 
 class MainViewController: NSViewController, InProgressVisualizable {
-    var inProgress: Bool = false {
-        didSet {
-            self.setAppearance()
-        }
-    }
 
+    // MARK: - InProgressVisualizable conformance
+    
+    var inProgress: Bool = false {
+        didSet { self.setAppearance() }
+    }
+    var informationViewName: String? = nil
+
+    
+    // MARK: - View events
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -15,11 +15,15 @@ class UserLoginController: NSViewController, FormValidatable, InProgressVisualiz
     @IBOutlet weak var emailTextField: EmailTextField!
     @IBOutlet weak var passwordTextField: NSSecureTextField!
     @IBOutlet weak var passwordResetButton: NSButton!
+    
+    
+    // MARK: - InProgressVisualizable conformance
+    
     @objc var inProgress: Bool = false {
-        didSet {
-            self.setAppearance()
-        }
+        didSet { self.setAppearance() }
     }
+    var informationViewName: String? = nil
+
     
     // MARK: - View events
     
